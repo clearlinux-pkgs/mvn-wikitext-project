@@ -4,14 +4,16 @@
 #
 Name     : mvn-wikitext-project
 Version  : 1.3
-Release  : 1
+Release  : 2
 URL      : https://github.com/fusesource/wikitext/archive/wikitext-project-1.3.tar.gz
 Source0  : https://github.com/fusesource/wikitext/archive/wikitext-project-1.3.tar.gz
-Source1  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.jar
-Source2  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.pom
-Source3  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.jar
-Source4  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.pom
-Source5  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/wikitext-project/1.3/wikitext-project-1.3.pom
+Source1  : https://repo.maven.apache.org/maven2/com/datastax/wikitext/wikitext-core-ant/1.3/wikitext-core-ant-1.3.jar
+Source2  : https://repo.maven.apache.org/maven2/com/datastax/wikitext/wikitext-core-ant/1.3/wikitext-core-ant-1.3.pom
+Source3  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.jar
+Source4  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.pom
+Source5  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.jar
+Source6  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.pom
+Source7  : https://repo.maven.apache.org/maven2/org/fusesource/wikitext/wikitext-project/1.3/wikitext-project-1.3.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 EPL-1.0
@@ -53,20 +55,26 @@ cp org.eclipse.mylyn.wikitext-feature/license.html %{buildroot}/usr/share/packag
 cp org.eclipse.mylyn.wikitext.core/about_files/LICENSE %{buildroot}/usr/share/package-licenses/mvn-wikitext-project/org.eclipse.mylyn.wikitext.core_about_files_LICENSE
 cp org.eclipse.mylyn.wikitext.core/about_files/NOTICE %{buildroot}/usr/share/package-licenses/mvn-wikitext-project/org.eclipse.mylyn.wikitext.core_about_files_NOTICE
 cp org.eclipse.mylyn.wikitext.sdk-feature/license.html %{buildroot}/usr/share/package-licenses/mvn-wikitext-project/org.eclipse.mylyn.wikitext.sdk-feature_license.html
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/datastax/wikitext/wikitext-core-ant/1.3
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/datastax/wikitext/wikitext-core-ant/1.3/wikitext-core-ant-1.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/datastax/wikitext/wikitext-core-ant/1.3
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/datastax/wikitext/wikitext-core-ant/1.3/wikitext-core-ant-1.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-core/1.3
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.jar
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-core/1.3
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.pom
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-project/1.3
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-project/1.3/wikitext-project-1.3.pom
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-project/1.3/wikitext-project-1.3.pom
 
 
 %files
@@ -74,6 +82,8 @@ cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/fusesource/wikitext
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/datastax/wikitext/wikitext-core-ant/1.3/wikitext-core-ant-1.3.jar
+/usr/share/java/.m2/repository/com/datastax/wikitext/wikitext-core-ant/1.3/wikitext-core-ant-1.3.pom
 /usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.jar
 /usr/share/java/.m2/repository/org/fusesource/wikitext/textile-core/1.3/textile-core-1.3.pom
 /usr/share/java/.m2/repository/org/fusesource/wikitext/wikitext-core/1.3/wikitext-core-1.3.jar
