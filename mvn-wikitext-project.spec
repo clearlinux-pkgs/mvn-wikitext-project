@@ -4,7 +4,7 @@
 #
 Name     : mvn-wikitext-project
 Version  : 1.3
-Release  : 3
+Release  : 4
 URL      : https://github.com/fusesource/wikitext/archive/wikitext-project-1.3.tar.gz
 Source0  : https://github.com/fusesource/wikitext/archive/wikitext-project-1.3.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/com/datastax/wikitext/wikitext-core-ant/1.3/wikitext-core-ant-1.3.jar
